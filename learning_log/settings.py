@@ -26,7 +26,7 @@ SECRET_KEY = '0@mero@k94=t34t_8pl9kgb#em38(^0!mpblvoy28ukctd-oeg'
 
 ALLOWED_HOSTS = [".herokuapp.com", ".virtual-learning-log.herokuapp.com"]
 
-DEBUG = True
+DEBUG = False
 
 
 # Application definition
