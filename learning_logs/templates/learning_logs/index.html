@@ -1,0 +1,14 @@
+{% extends "learning_logs/base.html" %}
+
+{% block header %}
+  <div class='jumbotron text-center'>
+      <h1>Wirtualny dziennik</h1>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <h2 class="text-center">
+    <a href="{% url 'users:register' %}">Zarejestruj się</a>
+    , aby stworzyć swój własny dziennik!
+  </h2>
+{% endblock %}
