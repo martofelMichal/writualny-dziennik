@@ -145,7 +145,7 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # Only allow heroku to host the project.
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['buddy-testing.com','www.buddy-testing.com.com','https://buddy-testing.com.herokuapp.com','buddy-testing.com.herokuapp.com',]
     DEBUG = False
 
     # Static asset configuration
