@@ -24,11 +24,7 @@ SECRET_KEY = '0@mero@k94=t34t_8pl9kgb#em38(^0!mpblvoy28ukctd-oeg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['virtual-learning-log.com',
-'www.virtual-learning-log.com',
-'https://virtual-learning-log.herokuapp.com',
-'virtual-learning-log.herokuapp.com',
-]
+ALLOWED_HOSTS = []
 
 DEBUG = True
 
@@ -149,7 +145,7 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # Only allow heroku to host the project.
-    ALLOWED_HOSTS = ['virtual-learning-log.com','www.virtual-learning-log.com','https://virtual-learning-log.herokuapp.com','virtual-learning-log.herokuapp.com',]
+    ALLOWED_HOSTS = []
     DEBUG = False
 
     # Static asset configuration

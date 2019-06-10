@@ -1,5 +1,4 @@
-{% load bootstrap4 %}
-
+{% load bootstrap4 %} {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Learning Log</title>
+    <title>Wirtualny dziennik</title>
 
-    {% bootstrap_css %} {% bootstrap_javascript %}
+    <meta name="description" content="" />
+    <meta name="keywords" content="" /> {% bootstrap_css %} {% bootstrap_javascript %}
 
 </head>
 
@@ -18,12 +18,12 @@
     <!-- Static navbar -->
     <nav class="navbar navbar-expand-lg navbar-fixed-top navbar navbar-dark bg-dark">
         <div class="container">
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="false" aria-controls="navbar">
             <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="{% url 'learning_logs:index' %}">
                 Wirtualny dziennik</a>
-                    <div id="navbarNavDropdown" class="collapse navbar-collapse">
+            <div id="navbarNavDropdown" class="collapse navbar-collapse">
 
                 <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}
@@ -40,18 +40,14 @@
 
         </div>
     </nav>
+    <div class="page-header">
+        {% block header %}{% endblock %}
+    </div>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
 
 
-
-        <div class="page-header">
-            {% block header %}{% endblock %}
-        </div>
-        <div>
-            {% block content %}{% endblock %}
-        </div>
-
-
-    <!-- /container -->
 
 </body>
 

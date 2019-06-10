@@ -2,11 +2,11 @@
 
 {% block content %}
 <div class="container mt-3">
-    <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic}}</a></p>
+    <h1 class="text-center"><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic}}</a></h1>
 
     <p>Edycja wpisu:</p>
 
-    <form style="mx-auto" action="{% url 'learning_logs:edit_entry' entry.id %}" method='post'>
+    <form class="text-area" action="{% url 'learning_logs:edit_entry' entry.id %}" method='post'>
         {% csrf_token %}
         {{form.as_p}}
         <button name='submit'>Zapisz wpis</button>
