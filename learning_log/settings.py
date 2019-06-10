@@ -24,7 +24,7 @@ SECRET_KEY = '0@mero@k94=t34t_8pl9kgb#em38(^0!mpblvoy28ukctd-oeg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['buddy-testing.com','www.buddy-testing.com.com','https://buddy-testing.com.herokuapp.com','buddy-testing.com.herokuapp.com']
+ALLOWED_HOSTS = ['buddy-testing.com','www.buddy-testing.com.com','https://buddy-testing.herokuapp.com','buddy-testing.herokuapp.com']
 
 DEBUG = True
 
@@ -145,7 +145,7 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # Only allow heroku to host the project.
-    ALLOWED_HOSTS = ['buddy-testing.com','www.buddy-testing.com.com','https://buddy-testing.com.herokuapp.com','buddy-testing.com.herokuapp.com']
+    ALLOWED_HOSTS = ['buddy-testing.com','www.buddy-testing.com.com','https://buddy-testing.herokuapp.com','buddy-testing.herokuapp.com']
     DEBUG = False
 
     # Static asset configuration
