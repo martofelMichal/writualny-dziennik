@@ -152,7 +152,7 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     # Only allow heroku to host the project.
     ALLOWED_HOSTS = ['virtual-learning-log.herokuapp.com', 'http://127.0.0.1']
 
-    DEBUG = False
+    # DEBUG = False
 
     # Static asset configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
