@@ -14,6 +14,9 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print("BASE dir to jest = " + BASE_DIR)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# print("Natomiast static root = " + STATIC_ROOT)
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,7 +27,8 @@ SECRET_KEY = '0@mero@k94=t34t_8pl9kgb#em38(^0!mpblvoy28ukctd-oeg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['buddy-testing.com','www.buddy-testing.com','https://buddy-testing.herokuapp.com','buddy-testing.herokuapp.com']
+#ALLOWED_HOSTS = ['buddy-testing.com','www.buddy-testing.com','https://buddy-testing.herokuapp.com','buddy-testing.herokuapp.com','127.0.0.1:8000']
+ALLOWED_HOSTS = []
 
 DEBUG = True
 
@@ -125,6 +129,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+import os.path
+
+
 STATIC_URL = '/static/'
 
 LOGIN_URL = '/users/login/'
@@ -134,18 +141,17 @@ BOOTSTRAP4 = {
     'include_jquery':True,
 }
 
+
 cwd = os.getcwd()
 if cwd == '/app' or cwd[:4] == '/tmp':
-    import dj_database_url
-    DATABASES = {
-        'default': dj_database_url.config(default='postgres://localhost')
-    }
+
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # Only allow heroku to host the project.
-    ALLOWED_HOSTS = ['buddy-testing.com','www.buddy-testing.com','https://buddy-testing.herokuapp.com','buddy-testing.herokuapp.com']
+    ALLOWED_HOSTS = ['virtual-learning-log.herokuapp.com', 'http://127.0.0.1']
+
     DEBUG = False
 
     # Static asset configuration

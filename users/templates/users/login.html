@@ -1,23 +1,20 @@
-{% extends "learning_logs/base.html" %}
-{% load bootstrap4 %}
-
-{% block header %}
+{% extends "learning_logs/base.html" %} {% load bootstrap4 %} {% block header %}
 <div class="container mt-3">
-  <h2>Zaloguj się na swoje konto</h2>
+    <h2>Zaloguj się na swoje konto</h2>
 </div>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <div class="container">
-  <form method="post" action="{% url 'users:login' %}" class="form">
-    {% csrf_token %}
-    {% bootstrap_form form %}
+    <div class="row">
+        <div class="center-box-login">
+            <div class="col-lg-12 user-login-form">
+                <form method="post" action="{% url 'users:login' %}" class="form">
+                    {% csrf_token %} {% bootstrap_form form %} {% buttons %}
+                    <button name="submit" class="btn btn-primary">Zaloguj</button> {% endbuttons %}
 
-    {% buttons %}
-      <button name="submit" class="btn btn-primary">Zaloguj</button>
-    {% endbuttons %}
-
-    <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
-  </form>
+                    <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}

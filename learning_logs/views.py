@@ -72,6 +72,7 @@ def edit_entry(request, entry_id):
     """edycja istniejacego wpisu"""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
+    topics = Topic.objects.filter(owner = request.user).order_by('date_added')
 
     if topic.owner != request.user:
         raise Http404
@@ -84,5 +85,5 @@ def edit_entry(request, entry_id):
             form.save()
             return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic.id]))
 
-    context = {'entry': entry, 'topic': topic, 'form': form}
+    context = {'entry': entry, 'topic': topic, 'form': form, 'topics': topics}
     return render(request, 'learning_logs/edit_entry.html', context)
