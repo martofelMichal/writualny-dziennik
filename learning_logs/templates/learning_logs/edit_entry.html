@@ -1,11 +1,10 @@
 {% extends "learning_logs/base.html" %} {% block content %}
 
 <div class="row full-width">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4 center-column-edit">
+    <div class="col-lg-12 center-column-edit">
         <div class="container mt-3">
-            <h1 class="text-center">Właśnie edytujesz następujący temat:
-                <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic}}</a></h1>
+            <h1 class="text-center">Właśnie edytujesz następujący temat:</br>
+                <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></h1>
 
             <p class="center-text">Edycja wpisu:</p>
 
@@ -14,18 +13,6 @@
                 <button class="btn btn-primary center-button" name='submit'>Zapisz wpis</button>
             </form>
         </div>
-    </div>
-    <div class="col-lg-4">
-        <h1>Lista tematów: </h1>
-        {% for topic in topics %}
-        <li>
-            <h3>
-                <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
-            </h3>
-        </li>
-        {% empty %}
-        <li>Nie dodano jeszcze tematów.</li>
-        {% endfor %}
     </div>
 
 </div>
